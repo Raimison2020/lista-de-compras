@@ -27,23 +27,24 @@ li {
     margin-top: 10px;
     color: #464545;
     padding: 12px 20px;
-    border: 1px solid #7c7b7b;
+    border-left: 4px solid #c7c4c4;
+    background-color: #F3F1F1;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
 }
 
 li:hover {
-    background-color: #f3f1f1;
+    background-color: #DFDFDF;
 }
 
 .item-text {
     /* font-weight: bold; */
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .item-quantity {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     font-size: 1em;
     display: flex;
 }
