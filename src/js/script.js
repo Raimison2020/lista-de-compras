@@ -30,9 +30,23 @@ function addItem() {
         quantityElement.textContent = `${quantidade} UN - ${totalItemValue.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
         quantityElement.classList.add("item-quantity")
         
+        const itemContainer = document.createElement("div")
+        itemContainer.classList.add("item-container")
+        itemContainer.appendChild(itemTextElement)
+        itemContainer.appendChild(quantityElement)
+
+        const divButton = document.createElement("div")
+        const deleteButton = document.createElement("button")
+        divButton.appendChild(deleteButton)
+        deleteButton.textContent = "Remover"
+        deleteButton.classList.add("btn-remove")
+        deleteButton.onclick = function() {
+            removeItem(listItem, totalItemValue)
+        }
+
         // Adiciona o texto do item e a quantidade ao item da lista
-        listItem.appendChild(itemTextElement)
-        listItem.appendChild(quantityElement)
+        listItem.appendChild(itemContainer)
+        listItem.appendChild(divButton)
 
         // Obtém a referência à lista de compras
         const shoppingList = document.getElementById("shopping-list")
@@ -44,20 +58,10 @@ function addItem() {
         // document.getElementById("total-value").textContent = `Valor Total: R$ ${totalValue.toFixed(2)}`
         document.getElementById("total-value").textContent = `Total: ${totalValue.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
         
-        // Cria um botão "Remover" associado a este item
-        const deleteButton = document.createElement("button")
-        deleteButton.textContent = "Remover"
-        deleteButton.classList.add("btn-remove")
-        deleteButton.onclick = function() {
-            removeItem(listItem, totalItemValue)
-        }
-        
-        listItem.appendChild(deleteButton)
-    
         // Limpa os campos de entrada
         itemInput.value = ""
         valueInput.value = ""
-        quantidadeInput.value = "1"
+        quantidadeInput.value = ""
 
     }
 
