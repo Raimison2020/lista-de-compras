@@ -106,3 +106,26 @@ input[type="number"] {
 #total-value {
     font-weight: bold;
 }
+
+@media (max-width: 711px) {
+    .button-add {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 596px) {
+    #item {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media (max-width: 596px) {
+    #value, #quantidade {
+        display: flex;
+        width: 100%;
+    }
+}
