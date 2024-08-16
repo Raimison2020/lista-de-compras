@@ -125,6 +125,7 @@ input[type="number"] {
 
 @media (max-width: 596px) {
     #value, #quantidade {
+        margin-top: 8px;
         display: flex;
         width: 100%;
     }
